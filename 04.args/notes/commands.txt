@@ -1,0 +1,15 @@
+1. npm init -y
+2. npm install nodemon
+3. npm install validator
+
+4. Install a plugin to color output
+  npm install chalk
+
+5. Process is an object with props and methods
+  npm nodemon Sorin 
+
+  Pass arguments to node:
+  node app.js add --title="Things to buy"
+
+6. Yargs helps you build interactive command line tools, by parsing arguments and generating an elegant user interface.
+  npm i yargs

@@ -1,0 +1,6 @@
+1. npm init -y
+2. npm install nodemon
+3. npm install validator
+
+4. Install a plugin to color output
+  npm install chalk
