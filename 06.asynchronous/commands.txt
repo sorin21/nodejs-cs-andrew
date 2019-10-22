@@ -1,0 +1,44 @@
+1. In a synchronous program one line runs after another. Like we have 2 console.log.
+
+2. In asynchronous program:
+  console.log('Starting');
+  setTimeout(() => {
+    console.log('2 Seconds timer')
+  }, 2000);
+  setTimeout(() => {
+    console.log('0 Seconds timer')
+  }, 0);
+  console.log('Stopping');
+
+  - main() is called in Call Stack
+  - console.log('Starting') is called in Call Stack and gets removed when its complete
+  - setTimeout(..., 2000) is pushed to Call Stack
+    When we call setTimeout() it's registering an event with NodeJS API, where the event is to wait 2 seconds 
+    and the callback is the function to run 
+  - setTimeout(..., 0) is pushed to Call Stack
+    This will register another event in NodeJS API, where the event is 0 seconds 
+
+  When a event is done is send to Callback Queue
+  - o seconds event is finished so the setTimeout function is send to Callback Queue 
+  This callback needs to be executed but before that the Event Loop looks if the Call Stack is empty. In this point Call Stack
+  is not empty, because has the main() function, so the callback cann't be executed now.
+  - console.log('Stopping') is called to Call Stack, print out the messege and gets removed from Call Stack
+  - in this moment main() is removed, because there is no more code.
+  - now the Event Loop sees that the Call Stack is empty and moves the callback(0) in Call Stack
+  - callback(0) will run, will add console.log in Call Stack and will removed after printing out the message, and callback(0) 
+  will be removed from Call Stack
+  - callback(2sec) is added to Callback Queue after finished 2 seconds, Event Loop will add it to Call Stack, because is empty
+  - callback(2sec) will run, the console.log will be added to Call Stack and removed..., and callback(2sec) is removed, too
+
+  Node uses other treads, behind the scene, for those Node APIs, so that is why Node is non blocking, allowing othere process
+  to finish, even we are waiting 2 seconds for other process
+
+3. Install request
+  npm i request
+
+4. Register to darksky
+  https://darksky.net/dev/account
+  user: dragonsorin@gmail.com 
+  pass: DragonLe3
+
+  https://api.darksky.net/forecast/9efc659feea9c30e3c680c360bcd9e9f/37.8267,-122.4233
