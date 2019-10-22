@@ -1,0 +1,6 @@
+1. use debugger where you want the app to stop
+ node --inspect-brk
+
+ In chrome open
+  chrome://inspect
+  

@@ -10,6 +10,9 @@
 
   Pass arguments to node:
   node app.js add --title="Things to buy"
+  node app.js add --title="Things to buy" --body="I want to buy a new computer"
+  node app.js read --title="Things to buy"
+  node app.js remove --title="Things to buy"
 
 6. Yargs helps you build interactive command line tools, by parsing arguments and generating an elegant user interface.
   npm i yargs

@@ -21,6 +21,8 @@ const addNote = (title, body) => {
     return note.title === title;
   })
 
+  debugger;
+
   if (duplicateNotes.length === 0) {
     // we push each note as an object
     notes.push({
