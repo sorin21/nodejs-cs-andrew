@@ -1,0 +1,5 @@
+  Express helps you to create node servers. 
+  Instead of running your app in terminal, with express we can run it in browser.
+
+1. Install express
+  npm i express
